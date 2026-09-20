@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College FAQ Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="chatbot-container">
+
+        <div class="header">
+            <h1>Kakatiya Institute of Technology and Science for Women - FAQ Chatbot</h1>
+            <p>Ask a question and get the most relevant answer.</p>
+        </div>
+
+       
+
+        <form method="POST">
+            <label for="question">Your Question</label>
+
+            <textarea
+                id="question"
+                name="question"
+                rows="4"
+                placeholder="Type your question here..."
+                required>{{ question }}</textarea>
+
+            <button type="submit">Ask Chatbot</button>
+        </form>
+
+        {% if answer %}
+        <div class="answer">
+            <h2>Chatbot Answer</h2>
+            <p>{{ answer }}</p>
+        </div>
+        {% endif %}
+
+    </div>
+
+</body>
+</html>
